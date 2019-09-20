@@ -1,0 +1,27 @@
+{
+	"animals": [
+		{ "id": 1, "name": "Doodles", "breed": "Poodle" },
+		{ "id": 2, "name": "Decker", "breed": "German Sheperd" },
+		{ "id": 3, "name": "Esme", "breed": "Pitbull" }
+	],
+	"employees": [
+		{ "id": 1, "name": "Steveasaurus", "position": "Dinosaur in Chief" },
+		{ "id": 2, "name": "Frederico", "position": "Weapon's Expert" },
+		{ "id": 3, "name": "Hallie", "position": "Petter of Cats" }
+	],
+	"locations": [
+		{ "id": 1, "address": "429 5th Ave", "city": "Huntington", "state": "WV" },
+		{ "id": 2, "address": "529 6th Ave", "city": "New York", "state": "NY" },
+		{
+			"id": 3,
+			"address": "629 7th Ave",
+			"city": "Jefferson City",
+			"state": "MI"
+		}
+	],
+	"owners": [
+		{ "id": 1, "name": "idk man some rich guy", "phonenumber": "555-555-5555" },
+		{ "id": 2, "name": "A Lion", "phonenumber": "555-555-5555" },
+		{ "id": 3, "name": "Ancient Wise Man", "phonenumber": "555-555-5555" }
+	]
+}

@@ -2,8 +2,8 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles!",
-      "breed": "POODDDLEEESSS"
+      "name": "Doodles",
+      "breed": "Poodle"
     },
     {
       "id": 2,
@@ -14,11 +14,6 @@
       "id": 3,
       "name": "Esme",
       "breed": "Pitbull"
-    },
-    {
-      "name": "Glorp",
-      "breed": "Gloooooorp",
-      "id": 4
     }
   ],
   "employees": [
@@ -50,6 +45,12 @@
       "address": "529 6th Ave",
       "city": "New York",
       "state": "NY"
+    },
+    {
+      "id": 3,
+      "address": "629 7th Ave",
+      "city": "Jefferson City",
+      "state": "MI"
     }
   ],
   "owners": [

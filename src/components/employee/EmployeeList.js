@@ -1,12 +1,22 @@
 import React, { Component } from "react";
 //import the components we will need
-import EmployeeCard from "./EmployeeCard.js"
-import EmployeeManager from "../../modules/EmployeeManager.js"
+import EmployeeCard from "./EmployeeCard.js";
+import EmployeeManager from "../../modules/EmployeeManager.js";
 
 class EmployeeList extends Component {
 	//define what this component needs to render
 	state = {
 		employees: []
+	};
+
+	deleteEmployee = id => {
+		EmployeeManager.delete(id).then(() => {
+			EmployeeManager.getAll().then(parsedEmployees => {
+				this.setState({
+					employees: parsedEmployees
+				});
+			});
+		});
 	};
 
 	componentDidMount() {
@@ -25,7 +35,7 @@ class EmployeeList extends Component {
 		return (
 			<div className="container-cards">
 				{this.state.employees.map(singleEmployee => (
-					<EmployeeCard key={singleEmployee.id} employeeProp={singleEmployee} />
+					<EmployeeCard deleteEmployeeProp={this.deleteEmployee} key={singleEmployee.id} employeeProp={singleEmployee} />
 				))}
 			</div>
 		);

@@ -1,81 +1,91 @@
 {
-  "animals": [
-    {
-      "id": 1,
-      "name": "Doodles!",
-      "breed": "POODDDLEEESSS",
-      "employeeId": 1
-    },
-    {
-      "id": 2,
-      "name": "Decker",
-      "breed": "German Sheperd",
-      "employeeId": 2
-    },
-    {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull",
-      "employeeId": 3
-    }
-  ],
-  "employees": [
-    {
-      "id": 1,
-      "name": "Steveasaurus",
-      "position": "Dinosaur in Chief"
-    },
-    {
-      "id": 2,
-      "name": "Frederico",
-      "position": "Weapon's Expert"
-    },
-    {
-      "id": 3,
-      "name": "Hallie",
-      "position": "Petter of Cats"
-    },
-    {
-      "id": 4,
-      "name": "GAAAAAH",
-      "position": "Glorp"
-    }
-  ],
-  "locations": [
-    {
-      "id": 1,
-      "address": "429 5th Ave",
-      "city": "Huntington",
-      "state": "WV"
-    },
-    {
-      "id": 2,
-      "address": "529 6th Ave",
-      "city": "New York",
-      "state": "NY"
-    },
-    {
-      "address": "555 Glorpton Ave",
-      "city": "Glorping",
-      "state": "Glorp",
-      "id": 3
-    }
-  ],
-  "owners": [
-    {
-      "id": 1,
-      "name": "idk man some rich guy",
-      "phonenumber": "555-555-5555"
-    },
-    {
-      "id": 2,
-      "name": "A Lion",
-      "phonenumber": "555-555-5555"
-    },
-    {
-      "id": 3,
-      "name": "Ancient Wise Man",
-      "phonenumber": "555-555-5555"
-    }
-  ]
+	"animals": [
+		{
+			"id": 1,
+			"name": "Doodles!",
+			"breed": "POODDDLEEESSS",
+			"employeeId": 2
+		},
+		{
+			"id": 2,
+			"name": "Decker",
+			"breed": "German Sheperd",
+			"employeeId": 1
+		},
+		{
+			"id": 3,
+			"name": "Esme",
+			"breed": "Pitbull",
+			"employeeId": 3
+		},
+		{
+			"name": "argh",
+			"breed": "argh",
+			"employeeId": 2,
+			"id": 4
+		}
+	],
+	"employees": [
+		{
+			"id": 1,
+			"name": "Steveasaurus",
+			"position": "Dinosaur in Chief",
+			"locationId": 1
+		},
+		{
+			"id": 2,
+			"name": "Frederico",
+			"position": "Weapon's Expert",
+			"locationId": 1
+		},
+		{
+			"id": 3,
+			"name": "Hallie",
+			"position": "Petter of Cats",
+			"locationId": 2
+		},
+		{
+			"id": 4,
+			"name": "GAAAAAH",
+			"position": "Glorp",
+			"locationId": 3
+		}
+	],
+	"locations": [
+		{
+			"id": 1,
+			"address": "429 5th Ave",
+			"city": "Huntington",
+			"state": "WV"
+		},
+		{
+			"id": 2,
+			"address": "529 6th Ave",
+			"city": "New York",
+			"state": "NY"
+		},
+		{
+			"address": "555 Glorpton Ave",
+			"city": "Glorping",
+			"state": "Glorp",
+			"id": 3
+		}
+	],
+	"owners": [
+		{
+			"id": 1,
+			"name": "idk man some rich guy",
+			"phonenumber": "555-555-5555"
+		},
+		{
+			"id": 2,
+			"name": "A Lion",
+			"phonenumber": "555-555-5555"
+		},
+		{
+			"id": 3,
+			"name": "Ancient Wise Man",
+			"phonenumber": "555-555-5555"
+		}
+	]
 }

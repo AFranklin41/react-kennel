@@ -7,6 +7,7 @@ class LocationDetail extends Component {
 		address: "",
 		city: "",
 		state: "",
+		employees: [],
 		loadingStatus: true
 	};
 
@@ -21,14 +22,17 @@ class LocationDetail extends Component {
 	componentDidMount() {
 		console.log("LocationDetail: ComponentDidMount");
 		//get(id) from AnimalManager and hang on to that data; put it into state
-		LocationManager.get(this.props.locationId).then(location => {
-			this.setState({
-				address: location.address,
-				city: location.city,
-				state: location.state,
-				loadingStatus: false
-			});
-		});
+		LocationManager.getLocationWithEmployees(this.props.locationId).then(
+			location => {
+				this.setState({
+					address: location.address,
+					city: location.city,
+					state: location.state,
+					loadingStatus: false,
+					employees: location.employees
+				});
+			}
+		);
 	}
 
 	render() {
@@ -42,6 +46,13 @@ class LocationDetail extends Component {
 					<p>Address: {this.state.address}</p>
 					<p>City: {this.state.city}</p>
 					<p>State: {this.state.state}</p>
+					<br />
+					<div>
+						Employees:
+						{this.state.employees.map(singleEmployee => {
+							return <p key={singleEmployee.id}>{singleEmployee.name}</p>;
+						})}
+					</div>
 					<button
 						type="button"
 						disabled={this.state.loadingStatus}

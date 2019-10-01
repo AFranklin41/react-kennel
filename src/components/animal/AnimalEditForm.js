@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AnimalManager from "../../modules/AnimalManager";
+import EmployeeManager from "../../modules/EmployeeManager";
 import "./AnimalForm.css";
 
 class AnimalEditForm extends Component {
@@ -7,6 +8,8 @@ class AnimalEditForm extends Component {
 	state = {
 		animalName: "",
 		breed: "",
+		employeeId: "",
+		employees: [],
 		loadingStatus: true
 	};
 
@@ -22,7 +25,8 @@ class AnimalEditForm extends Component {
 		const editedAnimal = {
 			id: this.props.match.params.animalId,
 			name: this.state.animalName,
-			breed: this.state.breed
+			breed: this.state.breed,
+			employeeId: +this.state.employeeId
 		};
 
 		AnimalManager.update(editedAnimal).then(() =>
@@ -32,10 +36,14 @@ class AnimalEditForm extends Component {
 
 	componentDidMount() {
 		AnimalManager.get(this.props.match.params.animalId).then(animal => {
-			this.setState({
-				animalName: animal.name,
-				breed: animal.breed,
-				loadingStatus: false
+			EmployeeManager.getAll().then(parsedEmployees => {
+				this.setState({
+					animalName: animal.name,
+					breed: animal.breed,
+					employeeId: animal.employeeId,
+					employees: parsedEmployees,
+					loadingStatus: false
+				});
 			});
 		});
 	}
@@ -65,6 +73,19 @@ class AnimalEditForm extends Component {
 								value={this.state.breed}
 							/>
 							<label htmlFor="breed">Breed</label>
+
+							<select
+								className="form-control"
+								id="employeeId"
+								value={this.state.employeeId}
+								onChange={this.handleFieldChange}
+							>
+								{this.state.employees.map(employee => (
+									<option key={employee.id} value={employee.id}>
+										{employee.name}
+									</option>
+								))}
+							</select>
 						</div>
 						<div className="alignRight">
 							<button

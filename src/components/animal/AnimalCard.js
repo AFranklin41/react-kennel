@@ -21,7 +21,9 @@ class AnimalCard extends Component {
 					<button
 						type="button"
 						onClick={() => {
-							this.props.history.push(`/animals/${this.props.animalProp.id}/edit`);
+							this.props.history.push(
+								`/animals/${this.props.animalProp.id}/edit`
+							);
 						}}
 					>
 						Edit

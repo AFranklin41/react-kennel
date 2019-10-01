@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import AnimalManager from "../../modules/AnimalManager";
 import "./AnimalDetail.css";
+import EmployeeManager from "../../modules/EmployeeManager";
 
 class AnimalDetail extends Component {
 	state = {
 		name: "",
 		breed: "",
+		employeeId: "",
 		loadingStatus: true
 	};
 
@@ -21,11 +23,16 @@ class AnimalDetail extends Component {
 		console.log("AnimalDetail: ComponentDidMount");
 		//get(id) from AnimalManager and hang on to that data; put it into state
 		AnimalManager.get(this.props.animalId).then(animal => {
-			this.setState({
-				name: animal.name,
-				breed: animal.breed,
-				loadingStatus: false
-			});
+			EmployeeManager.getEmployeeWithAnimals(this.props.animalId).then(
+				employee => {
+					this.setState({
+						name: animal.name,
+						breed: animal.breed,
+						employeeId: employee.name,
+						loadingStatus: false
+					});
+				}
+			);
 		});
 	}
 
@@ -41,6 +48,7 @@ class AnimalDetail extends Component {
 						<span style={{ color: "darkslategrey" }}>{this.state.name}</span>
 					</h3>
 					<p>Breed: {this.state.breed}</p>
+					<h4>Handler: {this.state.employeeId}</h4>
 					<button
 						type="button"
 						disabled={this.state.loadingStatus}

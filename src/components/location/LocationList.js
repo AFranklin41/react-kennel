@@ -33,8 +33,20 @@ class LocationList extends Component {
 
 		return (
 			<div className="container-cards">
+				<section className="section-content">
+					<button
+						type="button"
+						className="btn"
+						onClick={() => {
+							this.props.history.push("/locations/new");
+						}}
+					>
+						Add Location
+					</button>
+				</section>
 				{this.state.locations.map(singleLocation => (
 					<LocationCard
+						{...this.props}
 						deleteLocationProp={this.deleteLocation}
 						key={singleLocation.id}
 						locationProp={singleLocation}

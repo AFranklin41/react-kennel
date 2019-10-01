@@ -34,8 +34,24 @@ class EmployeeList extends Component {
 
 		return (
 			<div className="container-cards">
+				<section className="section-content">
+					<button
+						type="button"
+						className="btn"
+						onClick={() => {
+							this.props.history.push("/employees/new");
+						}}
+					>
+						Hire Employee
+					</button>
+				</section>
 				{this.state.employees.map(singleEmployee => (
-					<EmployeeCard deleteEmployeeProp={this.deleteEmployee} key={singleEmployee.id} employeeProp={singleEmployee} />
+					<EmployeeCard
+						deleteEmployeeProp={this.deleteEmployee}
+						key={singleEmployee.id}
+						employeeProp={singleEmployee}
+						{...this.props}
+					/>
 				))}
 			</div>
 		);

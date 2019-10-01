@@ -14,5 +14,23 @@ export default {
 		return fetch(`${remoteURL}/owners/${id}`, {
 			method: "DELETE"
 		}).then(result => result.json());
+	},
+	post(newOwner) {
+		return fetch(`${remoteURL}/owners`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(newOwner)
+		}).then(data => data.json());
+	},
+	update(editedOwner) {
+		return fetch(`${remoteURL}/animals/${editedOwner.id}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: JSON.stringify(editedOwner)
+		}).then(data => data.json());
 	}
 };

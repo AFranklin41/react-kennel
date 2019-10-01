@@ -19,7 +19,7 @@ class OwnerList extends Component {
 		});
 	};
 
-    componentDidMount() {
+	componentDidMount() {
 		console.log("OWNERS LIST: ComponentDidMount");
 		//getAll from AnimalManager and hang on to that data; put it in state
 		OwnerManager.getAll().then(owners => {
@@ -34,8 +34,24 @@ class OwnerList extends Component {
 
 		return (
 			<div className="container-cards">
+				<section className="section-content">
+					<button
+						type="button"
+						className="btn"
+						onClick={() => {
+							this.props.history.push("/owners/new");
+						}}
+					>
+						Add Owner
+					</button>
+				</section>
 				{this.state.owners.map(singleOwner => (
-					<OwnerCard deleteOwnerProp={this.deleteOwner} key={singleOwner.id} ownerProp={singleOwner} />
+					<OwnerCard
+						deleteOwnerProp={this.deleteOwner}
+						key={singleOwner.id}
+						ownerProp={singleOwner}
+						{...this.props}
+					/>
 				))}
 			</div>
 		);

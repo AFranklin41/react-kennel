@@ -15,11 +15,19 @@ class OwnerCard extends Component {
 						<span>{this.props.ownerProp.phonenumber}</span>
 					</h4>
 					<button
-						onClick={() =>
-							this.props.deleteOwnerProp(this.props.ownerProp.id)
-						}
+						onClick={() => this.props.deleteOwnerProp(this.props.ownerProp.id)}
 					>
 						Remove
+					</button>
+					<button
+						type="button"
+						onClick={() => {
+							this.props.history.push(
+								`/owners/${this.props.ownerProp.id}/edit`
+							);
+						}}
+					>
+						Edit
 					</button>
 				</div>
 			</div>

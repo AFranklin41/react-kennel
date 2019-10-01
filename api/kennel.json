@@ -3,22 +3,20 @@
     {
       "id": 1,
       "name": "Doodles!",
-      "breed": "POODDDLEEESSS"
+      "breed": "POODDDLEEESSS",
+      "employeeId": 1
     },
     {
       "id": 2,
       "name": "Decker",
-      "breed": "German Sheperd"
+      "breed": "German Sheperd",
+      "employeeId": 2
     },
     {
       "id": 3,
       "name": "Esme",
-      "breed": "Pitbull"
-    },
-    {
-      "name": "Glorp",
-      "breed": "Gloooooorp",
-      "id": 4
+      "breed": "Pitbull",
+      "employeeId": 3
     }
   ],
   "employees": [
@@ -36,6 +34,11 @@
       "id": 3,
       "name": "Hallie",
       "position": "Petter of Cats"
+    },
+    {
+      "id": 4,
+      "name": "GAAAAAH",
+      "position": "Glorp"
     }
   ],
   "locations": [
@@ -50,6 +53,12 @@
       "address": "529 6th Ave",
       "city": "New York",
       "state": "NY"
+    },
+    {
+      "address": "555 Glorpton Ave",
+      "city": "Glorping",
+      "state": "Glorp",
+      "id": 3
     }
   ],
   "owners": [
